@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Cero Desperdicios</title>
+        
+    </head>
+    <body>
+        <section th:fragment="listadoEnlatados" id="productos">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Enlatados</h4>
+                            </div>
+
+                            <div th:if="${productos != null and !productos.empty}">
+                                
+                                <table class="table table-striped table-hover">
+                                    <thead class="table-dark">
+                                        <tr><th>#</th>                                            
+                                            <th>[[#{producto.descripcion}]]</th>
+                                            <th>[[#{producto.precio}]]</th>
+                                            <th>[[#{producto.categoria}]]</th>
+                                            <th>Imagen</th>
+                                            <th></th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="productos, contador : ${productos}" th:if="${productos.categoria.idCategoria==1}">   
+                                            
+                                            <td>[[${productos.idProducto}]]</td>
+                                            <td>[[${productos.descripcion}]]</td>
+                                            <td style="text-align: end" >[[${productos.precio}]]</td>
+                                            <td>[[${productos.categoria.descripcion}]]</td>
+                                            <td><figure><img th:src="${productos.rutaImagen}" height="100" alt="alt"/></figure></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center p-2" th:if="${productos == null or productos.empty}">
+                                <span>[[#{lista.vacia}]]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section th:fragment="listadoLeguminosas" id="productos">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Enlatados</h4>
+                            </div>
+
+                            <div th:if="${productos != null and !productos.empty}">
+                                
+                                <table class="table table-striped table-hover">
+                                    <thead class="table-dark">
+                                        <tr><th>#</th>                                            
+                                            <th>[[#{producto.descripcion}]]</th>
+                                            <th>[[#{producto.precio}]]</th>
+                                            <th>[[#{producto.categoria}]]</th>
+                                            <th>Imagen</th>
+                                            <th></th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="productos, contador : ${productos}" th:if="${productos.categoria.idCategoria==2}">   
+                                            
+                                            <td>[[${productos.idProducto}]]</td>
+                                            <td>[[${productos.descripcion}]]</td>
+                                            <td style="text-align: end" >[[${productos.precio}]]</td>
+                                            <td>[[${productos.categoria.descripcion}]]</td>
+                                            <td><figure><img th:src="${productos.rutaImagen}" height="100" alt="alt"/></figure></td>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center p-2" th:if="${productos == null or productos.empty}">
+                                <span>[[#{lista.vacia}]]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section th:fragment="listadoPanaderia" id="productos">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Enlatados</h4>
+                            </div>
+
+                            <div th:if="${productos != null and !productos.empty}">
+                                
+                                <table class="table table-striped table-hover">
+                                    <thead class="table-dark">
+                                        <tr><th>#</th>                                            
+                                            <th>[[#{producto.descripcion}]]</th>
+                                            <th>[[#{producto.precio}]]</th>
+                                            <th>[[#{producto.categoria}]]</th>
+                                            <th>Imagen</th>
+                                            <th></th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="productos, contador : ${productos}" th:if="${productos.categoria.idCategoria==3}">   
+                                            
+                                            <td>[[${productos.idProducto}]]</td>
+                                            <td>[[${productos.descripcion}]]</td>
+                                            <td style="text-align: end" >[[${productos.precio}]]</td>
+                                            <td>[[${productos.categoria.descripcion}]]</td>
+                                            <td><figure><img th:src="${productos.rutaImagen}" height="100" alt="alt"/></figure></td>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center p-2" th:if="${productos == null or productos.empty}">
+                                <span>[[#{lista.vacia}]]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section th:fragment="cartas" id="productos">
+            <div class="container">
+            <div class="card-group">
+                <div class="row">
+                    <div th:each="categoria : ${categorias}">
+                        <div class="col-md-9">
+                            <h4>[[${categoria.descripcion}]]</h4>
+                            <a th:href="@{/productos/{d}(d=${categoria.descripcion})}" class="btn btn-primary">Ver todo</a>
+                        </div>
+                        <div th:if="${categoria.productos != null and !categoria.productos.empty}">
+                            <div class="card" style="width: 18rem;">
+                                <img th:src="${categoria.productos[0].rutaImagen}" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">[[${categoria.productos[0].descripcion}]]</h5>
+                                    <p class="card-text">
+                                        <strong>[[#{producto.precio}]]:</strong> [[${categoria.productos[0].precio}]]<br>
+                                   
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center p-2" th:if="${categoria.productos == null or categoria.productos.empty}">
+                            <span>[[#{lista.vacia}]]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

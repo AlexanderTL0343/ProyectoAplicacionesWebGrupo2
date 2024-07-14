@@ -1,0 +1,15 @@
+com\proyectoWeb\dao\ProductoDao.class
+com\proyectoWeb\domain\Categoria.class
+com\proyectoWeb\service\CategoriaService.class
+com\proyectoWeb\service\ProductoService.class
+com\proyectoWeb\domain\Usuario.class
+com\proyectoWeb\ProyectoWebApplication.class
+com\proyectoWeb\service\FireBaseStorageService.class
+com\proyectoWeb\controller\IndexController.class
+com\proyectoWeb\domain\Producto.class
+com\proyectoWeb\service\impl\CategoriaServiceImpl.class
+com\proyectoWeb\service\impl\ProductoServiceImpl.class
+com\proyectoWeb\ProjectConfig.class
+com\proyectoWeb\service\impl\FireBaseStorageServiceImpl.class
+com\proyectoWeb\dao\CategoriaDao.class
+com\proyectoWeb\controller\ProductoController.class
