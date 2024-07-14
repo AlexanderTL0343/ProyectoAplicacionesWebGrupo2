@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Cero Desperdiciose</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+        <h1 class="row justify-content-center">Registro</h1>
+        <div class="d-flex justify-content-center align-items-center">
+            <form th:action="@{/usuario/guardar}" method="POST" class="was-validated" enctype="multipart/form-data" ><!--Queda pendiente ajustar el th:action y el object -->
+
+                <div class="mb-3">
+                    <label for="correo">[[#{usuario.correo}]]</label>
+                    <input type="text" class="form-control" name="correo" required="true"/>
+                </div>
+                <div class="mb-3">
+                    <label for="contrasena">[[#{usuario.contrasena}]]</label>
+                    <input type="text" class="form-control" name="contrasena" required="true"/>
+                </div>
+                <div class="mb-3">
+                    <label for="nombre">[[#{usuario.nombre}]]</label>
+                    <input type="text" class="form-control" name="nombre" required="true"/>
+                </div>
+                <div class="mb-3">
+                    <label for="ciudad">[[#{usuario.ciudad}]]</label>
+                    <input type="text" class="form-control" name="ciudad" required="true"/>
+                </div>
+                <div class="mb-3">
+                    <label for="pais">[[#{usuario.pais}]]</label>
+                    <input type="text" class="form-control" name="pais" required="true"/>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button class="btn btn-primary" type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+
+    </body>
+</html>

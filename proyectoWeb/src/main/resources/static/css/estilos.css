@@ -1,0 +1,433 @@
+
+/* Lado derecho */
+body {
+    background-color: white;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.Buscador_Arriba{
+    position: absolute;
+    left: 43%;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+}
+
+input{
+    outline: none;
+    box-sizing: border-box;
+    height: 40px;
+    width: 19;
+    padding: 0 10px;
+    color: #000;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px solid black;
+    transition: all .7s ease;
+
+}
+
+
+
+.Parte_Arriba{
+    position: fixed;
+    background-color: white;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.Colores_Letras{
+    color: black;
+    text-decoration: none;
+
+}
+
+.Colores_LetrasLogosIzquierda{
+    color: black;
+    text-decoration: none;
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
+.Colores_LetrasCuenta{
+    color: black;
+    text-decoration: none;
+
+}
+
+
+.logo_ArribaIzquierda{
+
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 30px;
+    line-height: 100px;
+}
+
+.logo_Izquierda{
+
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 100px;
+}
+
+.TamanoTextoVideo{
+
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 100px;
+}
+
+.posicion_BotonesArribaDerecha{
+
+    display: flex;
+    margin-right: 180px;
+    list-style: none;
+
+}
+
+.posicion_LogosIzquierda{
+
+    display: flex;
+    flex-direction: column; /* Cambio de dirección a columna */
+    align-items: flex-start; /* Alinear los elementos al inicio */
+    margin-right: 500px;
+    list-style: none;
+
+}
+
+.posicion_BotonesFilaVideos{
+
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+
+}
+
+.Tamano_Letras{
+
+    font-size: 18px;
+    margin: 0 1px;
+    line-height: 80px;
+
+}
+
+.Tamano_Letras_Video{
+
+    font-size: 14px;
+    margin: 0 1px;
+    line-height: 80px;
+
+}
+
+.Tamano_TextoVideo{
+
+    font-size: 30px;
+    margin: 0 10px;
+    line-height: 80px;
+
+}
+
+.Tamano_Letras_Cuenta{
+
+    font-size: 30px;
+    margin: 0 10px;
+    line-height: 80px;
+
+}
+
+.Tamano_CuadroConLineas{
+
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    border: 2px solid #cccccc; /* Añade un borde alrededor del cuadro */
+    border-radius: 18px; /* Ajusta el radio de borde según sea necesario */
+    padding: 10px; /* Añade un poco de relleno */
+    justify-content: flex-end; /* Alinea los elementos al final (derecha) */
+}
+
+.menu_Despegable:hover {
+    background-color: black;
+    color: white; /* Este es el cambio de color del texto */
+    transition: background-color 0.4s ease, color 0.4s ease; /* Transición suave */
+
+}
+
+
+
+.foto_perfil {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    margin-right: 20px;
+}
+
+.detalles_usuario boton {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+}
+
+.detalles_usuario h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.detalles_usuario p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.menu_Despegable  {
+    padding: 6px 10px;
+    border-radius: 8px;
+
+
+
+}
+
+.menu_DespegableSuscribirse:hover {
+    background-color: black;
+    color: white; /* Este es el cambio de color del texto */
+    transition: all; /* Transición suave */
+
+}
+
+.menu_DespegableSuscribirse{
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+/*Lado izquierdo*/
+aside{
+    position: fixed;
+    background-color: white;
+    color: black;
+    top: 100px;
+    left: 0;
+    bottom: 20px;
+    width: 20%;
+    display: flex;
+    flex-direction: column; /* Para que los botones estén en una columna */
+    gap: 10px; /* Espacio entre los botones, ajusta según tus necesidades */
+    align-items: flex-start; /* Alinear los botones al inicio del contenedor */
+}
+/*El centro*/
+section{
+    position: fixed;
+    overflow-y: scroll;
+    background-color: white;
+    top: 100px;
+    left: 150px;
+    bottom: 20px;
+    width: 85%;
+    padding: 10px;
+}
+
+footer {
+    position: fixed;
+    background-color: black;
+    color: white;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+
+}
+
+.configuracion_Imagen {
+    width: 230px;
+    height: 300px; /* Ajuste la altura para acomodar las imágenes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin: 10px;
+    padding: 0px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.configuracion_Imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    display: block;
+}
+
+.configuracion_Imagen figure {
+    margin: 0;
+    padding: 0%;
+    text-align: center;
+    width: 100%;
+    height: 80%;
+}
+
+.configuracion_Imagen figcaption {
+    margin-top: 5px;
+    color: #333;
+}
+
+.configuracion_Video {
+    width: 1030px;
+    height: 670px; /* Ajuste la altura para acomodar las imágenes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin: 10px;
+    padding: 0px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.configuracion_Video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    display: block;
+}
+
+.configuracion_Video figure {
+    margin: 0;
+    padding: 0%;
+    text-align: center;
+    width: 100%;
+    height: 80%;
+}
+
+.configuracion_Video figcaption {
+    margin-top: 5px;
+    color: #333;
+}
+
+.configuracion_LogosArribaDerecha {
+    width: 50px;
+    height: 50px; /* Ajuste la altura para acomodar las imágenes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin: 10px;
+    padding: 0px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.configuracion_LogosArribaDerecha img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    display: block;
+}
+
+.configuracion_LogosArribaDerecha figure {
+    margin: 0;
+    padding: 0%;
+    text-align: center;
+    width: 100%;
+    height: 80%;
+}
+
+.configuracion_LogosArribaDerecha figcaption {
+    margin-top: 5px;
+    color: #333;
+}
+
+.configuracion_LogosIzquierda {
+    width: 62px; /* Ajustar la imagen hacia la izquierda. */
+    height: 60px; /* Ajuste la altura para acomodar las imágenes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin: 30px;
+    padding: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.configuracion_LogosIzquierda img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    display: block;
+}
+
+.configuracion_LogosIzquierda figure {
+    margin: 0;
+    padding: 0%;
+    text-align: center;
+    width: 100%;
+    height: 80%;
+}
+
+.configuracion_LogosIzquierda figcaption {
+    margin-top: 5px;
+    color: #333;
+}
+
+.texto_derecha {
+    float: right;
+    width: 200px; /* Ancho fijo para el contenido de texto */
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.texto_derecha_contenido {
+    width: 200px; /* Ancho fijo para el contenido de texto */
+    margin-left: 20px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+main {
+    padding: 20px 0;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Ajuste importante */
+}
+
+.notifications {
+    width: 300px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-left: 1px solid #ccc;
+    overflow-y: auto;
+    flex-shrink: 0; /* Evita que se reduzca de tamaño */
+}
+
+.notification {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.notification p {
+    margin: 0;
+    color: #333;
+}

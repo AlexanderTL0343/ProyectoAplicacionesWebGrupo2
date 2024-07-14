@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Cero Desperdicios</title>
+    </head>
+    <body>
+        <!-- 3 Sección principal para mostrar la información de la entidad oferta -->
+        <section th:fragment="listadoOfertas" id="ofertas">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>[[#{oferta.listado}]]</h4>
+                            </div>
+                            <div th:if="${ofertas != null and !ofertas.empty}">
+                                <div class="row">
+                                    <div th:each="oferta : ${ofertas}" class="col-md-3 mb-4 d-flex flex-column align-items-center">
+                                        <p class="mt-2 font-weight-bold">[[${oferta.titulo}]]</p>
+                                        <a th:href="@{${oferta.rutaImagenLink}}" target="_blank">
+                                            <img th:src="@{${oferta.rutaImagen}}" alt="Imagen de [[${oferta.titulo}]]" class="img-fluid rounded" style="height: 200px; object-fit: cover;">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center p-2" th:if="${ofertas == null or ofertas.empty}">
+                                <span>[[#{lista.vacia}]]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
