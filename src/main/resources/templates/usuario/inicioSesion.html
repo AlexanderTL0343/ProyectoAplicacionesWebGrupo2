@@ -1,0 +1,63 @@
+<!doctype html>
+<html data-bs-theme="auto" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"> 
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Cero Desperdicios</title>
+    </head>
+
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+        <div class="container-fluid my-5">
+            <div class="row align-items-center">
+                
+                <div class="col-1"></div><!-- ESTO ES UN ESPACIO ENTRE COLUMNAS -->
+                
+                <div class="col-2"> <!-- Aqui ira la imagen de registrarse -->
+                    <div class="row justify-content-center">
+                        <img src="https://thumbs.dreamstime.com/z/man-stands-near-smartphone-screen-login-page-user-profile-access-to-account-concept-269672397.jpg?ct=jpeg" 
+                             width="650" height="300"/>
+                    </div>
+                </div>
+                <div class="col-1"></div><!-- ESTO ES UN ESPACIO ENTRE COLUMNAS -->
+                
+                <div class="col-3 ">
+                    <h2 class="text-center">Inicio Sesión</h2>
+
+                    <form method="POST" th:action="@{/usuario/listado}">
+                        <div class="form-group row  my-3 ">
+                            <label class="my-3 text-center" for="username">Usuario:</label>   
+                            <input class="form-control rounded-pill " placeholder="Usuario..." type="text" name="username" id="username"/>
+                        </div>
+
+                        <div class="form-group row my-3">
+                            <label class="my-3 text-center" for="password">Contraseña:</label>
+                            <input class="form-control rounded-pill" placeholder="Contraseña..." type="password" name="password" id="password"/>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <a class="btn btn-primary w-100 py-2" th:href="@{/usuario/listado}">Iniciar sesión</a> <!-- Esto es un login quemado -->
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="col-1"></div><!-- ESTO ES UN ESPACIO ENTRE COLUMNAS -->
+
+                <div class="col-3 "><!-- Aqui ira el boton de registrarse -->
+                    <div class="card ">                     
+                        <div class="card-body ">                          
+                            <div class="text-center">
+                                <h2>¿No tienes una cuenta registrada? Registrate gratis para poder relizar pedidos cuando quieras.</h2> 
+                                <a th:href="@{/usuario/registrarse}" class="btn btn-success my-3 rounded-pill">Registrarse</a>
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-1"></div><!-- ESTO ES UN ESPACIO ENTRE COLUMNAS -->
+            </div>   
+        </div> 
+        </div>
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
+</html>

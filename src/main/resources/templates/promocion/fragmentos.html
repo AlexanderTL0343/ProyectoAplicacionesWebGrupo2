@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Promociones</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Sección principal para mostrar la información de la entidad promocion -->
+    <section th:fragment="listadoPromociones" id="promociones">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-12 text-center">
+                    <h2>PROMOCIONES</h2>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-6 text-left">
+                    <h3>Productos en descuento</h3>
+                </div>
+                <div class="col-md-6 text-right">
+                    <h4>LO MÁS RECIENTE</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div th:if="${promociones != null and !promociones.empty}">
+                    <div class="row">
+                        <div th:each="promocion : ${promociones}" class="col-md-2 mb-4 d-flex flex-column align-items-center">
+                            <a th:href="@{${promocion.rutaImagenLink}}" target="_blank">
+                                <img th:src="@{${promocion.rutaImagen}}" alt="Imagen de promoción" class="img-fluid rounded" style="height: 200px; object-fit: cover;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center p-2" th:if="${promociones == null or promociones.empty}">
+                    <span>No hay promociones disponibles</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
